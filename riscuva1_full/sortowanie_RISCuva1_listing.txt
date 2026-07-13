@@ -1,0 +1,69 @@
+adr  | hex  | mnemonik
+-----+------+------------------------------
+  0  | 2003 | mov  r3,#0
+  1  | 3c34 | mov  r4,(r3)    ; a = pamiec[0]
+  2  | 2013 | mov  r3,#1
+  3  | 3c35 | mov  r5,(r3)    ; b = pamiec[1]
+  4  | 3042 | mov  r2,r4      ; scratch = a
+  5  | 3652 | sub  r2,r5      ; a-b ; Carry=1 gdy a<b
+  6  | 180b | jpC  noswap0
+  7  | 2003 | mov  r3,#0
+  8  | 0c35 | mov  (r3),r5    ; pamiec[0] = b (mniejsze)
+  9  | 2013 | mov  r3,#1
+ 10  | 0c34 | mov  (r3),r4    ; pamiec[1] = a (wieksze)
+ 11  | 2013 | mov  r3,#1
+ 12  | 3c34 | mov  r4,(r3)    ; a = pamiec[1]
+ 13  | 2023 | mov  r3,#2
+ 14  | 3c35 | mov  r5,(r3)    ; b = pamiec[2]
+ 15  | 3042 | mov  r2,r4      ; scratch = a
+ 16  | 3652 | sub  r2,r5      ; a-b ; Carry=1 gdy a<b
+ 17  | 1816 | jpC  noswap1
+ 18  | 2013 | mov  r3,#1
+ 19  | 0c35 | mov  (r3),r5    ; pamiec[1] = b (mniejsze)
+ 20  | 2023 | mov  r3,#2
+ 21  | 0c34 | mov  (r3),r4    ; pamiec[2] = a (wieksze)
+ 22  | 2023 | mov  r3,#2
+ 23  | 3c34 | mov  r4,(r3)    ; a = pamiec[2]
+ 24  | 2033 | mov  r3,#3
+ 25  | 3c35 | mov  r5,(r3)    ; b = pamiec[3]
+ 26  | 3042 | mov  r2,r4      ; scratch = a
+ 27  | 3652 | sub  r2,r5      ; a-b ; Carry=1 gdy a<b
+ 28  | 1821 | jpC  noswap2
+ 29  | 2023 | mov  r3,#2
+ 30  | 0c35 | mov  (r3),r5    ; pamiec[2] = b (mniejsze)
+ 31  | 2033 | mov  r3,#3
+ 32  | 0c34 | mov  (r3),r4    ; pamiec[3] = a (wieksze)
+ 33  | 2003 | mov  r3,#0
+ 34  | 3c34 | mov  r4,(r3)    ; a = pamiec[0]
+ 35  | 2013 | mov  r3,#1
+ 36  | 3c35 | mov  r5,(r3)    ; b = pamiec[1]
+ 37  | 3042 | mov  r2,r4      ; scratch = a
+ 38  | 3652 | sub  r2,r5      ; a-b ; Carry=1 gdy a<b
+ 39  | 182c | jpC  noswap3
+ 40  | 2003 | mov  r3,#0
+ 41  | 0c35 | mov  (r3),r5    ; pamiec[0] = b (mniejsze)
+ 42  | 2013 | mov  r3,#1
+ 43  | 0c34 | mov  (r3),r4    ; pamiec[1] = a (wieksze)
+ 44  | 2013 | mov  r3,#1
+ 45  | 3c34 | mov  r4,(r3)    ; a = pamiec[1]
+ 46  | 2023 | mov  r3,#2
+ 47  | 3c35 | mov  r5,(r3)    ; b = pamiec[2]
+ 48  | 3042 | mov  r2,r4      ; scratch = a
+ 49  | 3652 | sub  r2,r5      ; a-b ; Carry=1 gdy a<b
+ 50  | 1837 | jpC  noswap4
+ 51  | 2013 | mov  r3,#1
+ 52  | 0c35 | mov  (r3),r5    ; pamiec[1] = b (mniejsze)
+ 53  | 2023 | mov  r3,#2
+ 54  | 0c34 | mov  (r3),r4    ; pamiec[2] = a (wieksze)
+ 55  | 2003 | mov  r3,#0
+ 56  | 3c34 | mov  r4,(r3)    ; a = pamiec[0]
+ 57  | 2013 | mov  r3,#1
+ 58  | 3c35 | mov  r5,(r3)    ; b = pamiec[1]
+ 59  | 3042 | mov  r2,r4      ; scratch = a
+ 60  | 3652 | sub  r2,r5      ; a-b ; Carry=1 gdy a<b
+ 61  | 1842 | jpC  noswap5
+ 62  | 2003 | mov  r3,#0
+ 63  | 0c35 | mov  (r3),r5    ; pamiec[0] = b (mniejsze)
+ 64  | 2013 | mov  r3,#1
+ 65  | 0c34 | mov  (r3),r4    ; pamiec[1] = a (wieksze)
+ 66  | 0442 | goto halt

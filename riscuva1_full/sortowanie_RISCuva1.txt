@@ -1,0 +1,77 @@
+        mov  r3,#0
+        mov  r4,(r3)
+        mov  r3,#1
+        mov  r5,(r3)
+        mov  r2,r4
+        sub  r2,r5
+        jpC  noswap0
+        mov  r3,#0
+        mov  (r3),r5
+        mov  r3,#1
+        mov  (r3),r4
+noswap0:
+        mov  r3,#1
+        mov  r4,(r3)
+        mov  r3,#2
+        mov  r5,(r3)
+        mov  r2,r4
+        sub  r2,r5
+        jpC  noswap1
+        mov  r3,#1
+        mov  (r3),r5
+        mov  r3,#2
+        mov  (r3),r4
+noswap1:
+        mov  r3,#2
+        mov  r4,(r3)
+        mov  r3,#3
+        mov  r5,(r3)
+        mov  r2,r4
+        sub  r2,r5
+        jpC  noswap2
+        mov  r3,#2
+        mov  (r3),r5
+        mov  r3,#3
+        mov  (r3),r4
+noswap2:
+
+        mov  r3,#0
+        mov  r4,(r3)
+        mov  r3,#1
+        mov  r5,(r3)
+        mov  r2,r4
+        sub  r2,r5
+        jpC  noswap3
+        mov  r3,#0
+        mov  (r3),r5
+        mov  r3,#1
+        mov  (r3),r4
+noswap3:
+        mov  r3,#1
+        mov  r4,(r3)
+        mov  r3,#2
+        mov  r5,(r3)
+        mov  r2,r4
+        sub  r2,r5
+        jpC  noswap4
+        mov  r3,#1
+        mov  (r3),r5
+        mov  r3,#2
+        mov  (r3),r4
+noswap4:
+
+        mov  r3,#0
+        mov  r4,(r3)
+        mov  r3,#1
+        mov  r5,(r3)
+        mov  r2,r4
+        sub  r2,r5
+        jpC  noswap5
+        mov  r3,#0
+        mov  (r3),r5
+        mov  r3,#1
+        mov  (r3),r4
+noswap5:
+
+halt:
+        goto halt

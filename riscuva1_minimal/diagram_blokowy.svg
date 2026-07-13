@@ -1,0 +1,49 @@
+<svg viewBox="0 0 700 470" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Arial, sans-serif">
+  <title>Diagram blokowy procesora RISCuva1</title>
+  <rect x="0" y="0" width="700" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#888888" stroke-width="1.5">
+    <rect x="30" y="60" width="140" height="66" rx="8"/>
+    <rect x="250" y="60" width="160" height="66" rx="8"/>
+    <rect x="490" y="60" width="180" height="66" rx="8"/>
+    <rect x="250" y="220" width="160" height="66" rx="8"/>
+    <rect x="490" y="220" width="180" height="66" rx="8"/>
+    <rect x="250" y="370" width="300" height="66" rx="8" stroke="#1D9E75" stroke-width="2"/>
+  </g>
+  <g fill="#111111" font-size="15" font-weight="600" text-anchor="middle">
+    <text x="100" y="90">PC</text>
+    <text x="330" y="90">ROM</text>
+    <text x="580" y="90">DEKODER</text>
+    <text x="330" y="250">REJESTRY</text>
+    <text x="580" y="250">ALU</text>
+    <text x="400" y="400">PAMIĘĆ DANYCH</text>
+  </g>
+  <g fill="#555555" font-size="11.5" text-anchor="middle">
+    <text x="100" y="110">licznik rozkazów</text>
+    <text x="330" y="110">pamięć programu</text>
+    <text x="580" y="110">tłumaczy instrukcję</text>
+    <text x="330" y="270">8 szufladek na liczby</text>
+    <text x="580" y="270">kalkulator: −, przepisz</text>
+    <text x="400" y="420">tu leżą i sortują się liczby (0,1,2,3)</text>
+  </g>
+  <g fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M170,93 L246,93"/>
+    <path d="M410,93 L486,93"/>
+    <path d="M580,126 L580,216"/>
+    <path d="M490,253 L414,253"/>
+    <path d="M330,286 L330,366"/>
+    <path d="M100,126 L100,410 L246,410"/>
+  </g>
+  <g fill="#555555" font-size="11" text-anchor="middle">
+    <text x="208" y="86">adres</text>
+    <text x="448" y="86">instrukcja</text>
+    <text x="640" y="175" text-anchor="end">mówi co robić</text>
+    <text x="452" y="245">dane</text>
+    <text x="360" y="330" text-anchor="start">zapis / odczyt</text>
+    <text x="150" y="146" text-anchor="start">↩ PC przesuwa się dalej</text>
+  </g>
+</svg>

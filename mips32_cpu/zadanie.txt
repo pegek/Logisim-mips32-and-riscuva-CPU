@@ -1,0 +1,70 @@
+Logisim
+zaprojektować procesor oraz zrobić kod do sortowania bąbelkowego dla ISA:
+
+-----------------
+32 rejestry ogólnego przeznaczenia: R0–R31
+Architektura typu load/store
+Stała długość instrukcji: 32 bity
+
+
+3 podstawowe formaty instrukcji:
+R-type (operacje rejestr-rejestr)
+I-type (natychmiastowe, load/store, branch)
+J-type (skoki)
+
+
+Format instrukcji
+🔹 R-type
+| opcode (6) | rs (5) | rt (5) | rd (5) | shamt (5) | funct (6) |
+
+🔹 I-type
+| opcode (6) | rs (5) | rt (5) | immediate (16) |
+
+🔹 J-type
+| opcode (6) | address (26) |
+
+Operacje arytmetyczne
+Instrukcja  Opis
+ADD rd, rs, rt    rd = rs + rt
+SUB rd, rs, rt    rd = rs − rt
+MUL rd, rs, rt    rd = rs × rt
+DIV rd, rs, rt    rd = rs ÷ rt
+AND rd, rs, rt    rd = rs & rt
+OR rd, rs, rt     rd = rs | rt
+XOR rd, rs, rt    rd = rs ^ rt
+SLT rd, rs, rt    rd = (rs < rt) ? 1 : 0
+
+Operacje z wartością natychmiastową
+Instrukcja  Opis
+ADDI rt, rs, imm  rt = rs + imm
+ANDI rt, rs, imm  rt = rs & imm
+ORI rt, rs, imm         rt = rs | imm
+XORI rt, rs, imm  rt = rs ^ imm
+SLTI rt, rs, imm  rt = (rs < imm) ? 1 : 0
+
+
+Dostęp do pamięci (Load/Store
+Instrukcja  Opis
+LW rt, offset(rs) rt = MEM[rs + offset]
+SW rt, offset(rs) MEM[rs + offset] = rt
+
+Skoki warunkowe
+Instrukcja  Opis
+BEQ rs, rt, offset      jeśli rs == rt → skok
+BNE rs, rt, offset      jeśli rs ≠ rt → skok
+BGT rs, rt, offset      jeśli rs > rt → skok
+BLT rs, rt, offset      jeśli rs < rt → skok
+
+Skoki bezwarunkowe
+Instrukcja  Opis
+J address   bezwarunkowy skok
+JR rs       skok pod adres w rs
+
+Operacje przesunięć
+Instrukcja  Opis
+SLL rd, rt, shamt shift left logical
+SRL rd, rt, shamt shift right logical
+SRA rd, rt, shamt shift right arithmetic
+
+
+Pole funct (function field) służy do dokładnego określenia operacji, gdy kilka instrukcji korzysta z tego samego opcode.
